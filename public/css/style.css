@@ -78,6 +78,7 @@ ul li:first-child {
 
 header {
   position: fixed;
+  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

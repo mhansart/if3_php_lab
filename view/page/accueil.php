@@ -1,7 +1,7 @@
 
 <header>
     <div class="facebook"></div>
-    <div class="connexion"><a href="">connexion</a></div>
+    <div class="connexion"><a href="?section=connexion">connexion</a></div>
 </header>
 <div class="accueil">
     <div class="containerAccueil">
