@@ -76,4 +76,8 @@ ul li:first-child {
   color: transparent;
 }
 
+header {
+  position: fixed;
+}
+
 /*# sourceMappingURL=style.css.map */

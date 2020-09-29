@@ -1,5 +1,8 @@
 
-
+<header>
+    <div class="facebook"></div>
+    <div class="connexion"><a href="">connexion</a></div>
+</header>
 <div class="accueil">
     <div class="containerAccueil">
         <div class="logo_big"><img src="public/img/logo.png" alt="logo"></div>
