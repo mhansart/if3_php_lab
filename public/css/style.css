@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 * {
   box-sizing: border-box;
+  transition: all 0.3s;
 }
 
 body {
@@ -8,6 +16,125 @@ body {
   font-family: "Oswald", sans-serif;
   width: 100%;
   height: 100%;
+  background-color: #1a2c4d;
+}
+
+.menuFixe {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+}
+.menuFixe .containerMenuFixe {
+  padding: 15px 0;
+  position: relative;
+  margin: auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.menuFixe .containerMenuFixe .logodark {
+  position: absolute;
+  top: 0;
+  margin-top: 15px;
+}
+.menuFixe .containerMenuFixe .logodark a {
+  display: block;
+  height: 114px;
+  width: auto;
+}
+.menuFixe .containerMenuFixe .logodark a img {
+  width: auto;
+  height: 100%;
+}
+.menuFixe .containerMenuFixe .d-flex-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+.menuFixe .containerMenuFixe .d-flex-menu > * {
+  margin-bottom: 10px;
+}
+.menuFixe .containerMenuFixe .d-flex-menu > *:last-child {
+  margin-bottom: 0;
+}
+.menuFixe .containerMenuFixe .d-flex-menu .menuconnexion-menuFixe {
+  display: flex;
+  align-items: center;
+}
+.menuFixe .containerMenuFixe .d-flex-menu .menuconnexion-menuFixe > * {
+  margin-left: 10px;
+}
+.menuFixe .containerMenuFixe .d-flex-menu .menuconnexion-menuFixe .connexion {
+  margin-right: 0;
+}
+.menuFixe .containerMenuFixe .d-flex-menu .menuaccueil-menuFixe nav ul li a {
+  color: #1a2c4d;
+  padding: 7px 12px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .facebook {
+  border-radius: 100%;
+  border: 3px solid #f2ce4f;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .facebook:hover {
+  background-color: #1a2c4d;
+  border-color: #1a2c4d;
+}
+header .facebook i {
+  font-size: 15px;
+  color: #f2ce4f;
+}
+header .connexion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .connexion a {
+  padding: 7px 10px;
+  background-color: #f2ce4f;
+  color: #1a2c4d;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+header .connexion a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1a2c4d;
+  transition: all 0.3s;
+  z-index: -1;
+}
+header .connexion a:hover {
+  z-index: 1;
+  color: #f2ce4f;
+}
+header .connexion a:hover::before {
+  width: 100%;
+}
+
+.pseudo {
+  font-weight: 700;
 }
 
 ul {
@@ -17,20 +144,43 @@ ul {
   padding: 0;
 }
 ul li {
-  height: 50px;
-  padding: 0px 25px;
   display: flex;
   align-items: center;
-  border-left: solid 1px #f2ce4f;
 }
 ul li a {
   text-decoration: none;
   color: #f2ce4f;
   text-transform: uppercase;
   font-size: 20px;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 9;
 }
-ul li:first-child {
-  border: none;
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #f2ce4f;
+  transition: all 0.3s;
+  z-index: -1;
+}
+ul li a:hover {
+  color: #1a2c4d;
+}
+ul li a:hover::before {
+  width: 100%;
+}
+ul li:first-child a::before {
+  width: 0;
+}
+ul li:first-child a:hover {
+  color: #1a2c4d;
+}
+ul li:first-child a:hover::before {
+  width: 100%;
 }
 
 .accueil {
@@ -48,18 +198,17 @@ ul li:first-child {
   align-items: center;
 }
 .accueil .containerAccueil .logo_big {
-  overflow: hidden;
-  width: 100%;
-  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 .accueil .containerAccueil .logo_big img {
-  width: 45%;
+  width: 550px;
   height: auto;
 }
 .accueil .containerAccueil .title {
+  font-weight: 400;
   margin: 0;
   text-transform: uppercase;
   color: white;
@@ -70,15 +219,50 @@ ul li:first-child {
 }
 .accueil .containerAccueil .title--little {
   font-size: 22px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 .accueil .containerAccueil .title .point {
-  color: transparent;
+  margin: 5px;
 }
 
-header {
+.leclub {
+  background-color: #1a2c4d;
+}
+
+.headerAccueil {
+  width: 100%;
   position: fixed;
-  background-color: red;
+}
+.headerAccueil .containerHeaderAccueil {
+  padding: 15px 0;
+  margin: auto;
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.headerAccueil .containerHeaderAccueil > * {
+  margin-left: 10px;
+}
+.headerAccueil .containerHeaderAccueil p {
+  color: #f2ce4f;
+}
+.headerAccueil .containerHeaderAccueil .facebook:hover {
+  background-color: white;
+  border-color: white;
+}
+.headerAccueil .containerHeaderAccueil .facebook:hover i {
+  color: #1a2c4d;
+}
+.headerAccueil .containerHeaderAccueil .connexion a::before {
+  background-color: white;
+}
+.headerAccueil .containerHeaderAccueil .connexion a:hover {
+  z-index: 1;
+  color: #1a2c4d;
+}
+.headerAccueil .containerHeaderAccueil .connexion a:hover::before {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

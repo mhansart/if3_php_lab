@@ -1,0 +1,66 @@
+@use "variables" as *;
+
+.menuFixe{
+    width: 100%;
+    position: fixed;
+    background-color: $third-color;
+    .containerMenuFixe{
+        padding: 15px 0;
+        position: relative;
+        margin: auto;
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .logodark{
+            position: absolute;
+            top: 0;
+            margin-top: 15px;
+            a{
+                display: block;
+                height: 114px;
+                width: auto;
+                img{
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+        .d-flex-menu{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 100%;
+            &>*{
+                margin-bottom: 10px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            
+            .menuconnexion-menuFixe{
+                &>*{
+                    margin-left: 10px;
+                }
+                
+                display: flex;
+                align-items: center;
+                .connexion{
+                    margin-right: 0;
+                }
+            }
+            .menuaccueil-menuFixe{
+                nav{
+                    ul{
+                        li{
+                            a{
+                                color: $second-color;
+                                padding:7px 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

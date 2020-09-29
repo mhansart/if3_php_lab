@@ -5,6 +5,9 @@
             case 'accueil':
                 include("controller/accueilController.php");
                 break;
+            case 'lultimate':
+                include("controller/lultimateController.php");
+                break;
             case 'leclub':
                 include("controller/leclubController.php");
                 break;
@@ -19,6 +22,9 @@
                 break;
             case 'deconnexion':
                 include("controller/deconnexionController.php");
+                break;
+            case 'moncompte':
+                include("controller/moncompteController.php");
                 break;
             
             default:

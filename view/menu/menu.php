@@ -1,26 +1,9 @@
-<?php 
-    if(isset($_SESSION["nom"]))
-    {
-        echo "<p>Bienvenue " . $_SESSION["nom"] . "<p>";
-    }
-?>
-<nav>
-    <ul>
-        <li><a href="?section=accueil">Accueil</a></li>
-        <li><a href="?section=leclub">Le club</a></li>
-        <li><a href="?section=lesentrainements">Les entraînements</a></li>
-        <li><a href="?section=contact">Contact</a></li>
-        <?php 
-            if(isset($_SESSION["nom"]))
-            {
-                echo '<li><a href="?section=deconnexion">Déconnexion</a></li>';
-            }
-            else 
-            {
-                echo '<li><a href="?section=connexion">Connexion</a></li>';
-            }
-        ?>
-        
-        
-    </ul>   
-</nav>
+<header class="menuFixe">
+    <div class="containerMenuFixe">
+        <div class="logodark"><a href="?section=accueil"><img src="public/img/logodark.png" alt="logo dark"></a></div>
+        <div class="d-flex-menu">
+            <div class="menuconnexion-menuFixe"><?php include("view/menu/menuconnexion.php");  ?></div>
+            <div class="menuaccueil-menuFixe"><?php include("view/menu/menuaccueil.php");  ?></div>
+        </div>
+    </div>
+</header>

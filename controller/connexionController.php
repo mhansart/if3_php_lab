@@ -8,7 +8,7 @@
         {
             // enregistre dans une variable de session
             $_SESSION["nom"] = trim($_POST["nom"]);
-            header("Location:?section=accueil");
+            header("Location:?section=moncompte");
         }
         else 
         {
