@@ -69,7 +69,20 @@ footer{
                         }
                         &:hover{
                             color: $third-color;
+                            &::before{
+                                width: 1px;
                             }
+                        }
+                    }
+                    &:first-child{
+                        a{  
+                            &:hover{
+                                color: $third-color;
+                                &::before{
+                                    width: 0;
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -89,6 +89,15 @@ footer .containerFooter nav ul li a::before {
 footer .containerFooter nav ul li a:hover {
   color: white;
 }
+footer .containerFooter nav ul li a:hover::before {
+  width: 1px;
+}
+footer .containerFooter nav ul li:first-child a:hover {
+  color: white;
+}
+footer .containerFooter nav ul li:first-child a:hover::before {
+  width: 0;
+}
 
 ul {
   list-style-type: none;
