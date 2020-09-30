@@ -10,9 +10,12 @@
 <form action="#" method="post">
     <label for="nom">Nom :</label>
     <input type="text" name="nom" id="nom">
-    <input type="submit" value="Connexion">
+    <label for="prenom">Prénom :</label>
+    <input type="text" name="prenom" id="prénom">
+    <button type="submit" id="btn_submit">Connexion</button>
 </form>
 <?= $message; ?>
 </div>
+<?php include("view/menu/menufooter.php");  ?>
 <script src="public/js/script.js"></script>
 <?php include("view/html/footer.php"); ?>

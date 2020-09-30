@@ -55,6 +55,9 @@ ul{
     width: 100%;
     position: fixed;
     background-color: $third-color;
+    p{
+        color: $second-color;
+    }
     .containerMenuFixe{
         padding: 15px 0;
         position: relative;

@@ -6,6 +6,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 * {
   box-sizing: border-box;
   transition: all 0.3s;
@@ -16,7 +18,76 @@ body {
   font-family: "Oswald", sans-serif;
   width: 100%;
   height: 100%;
+}
+
+footer {
   background-color: #1a2c4d;
+}
+footer .subfooter {
+  background-image: url("../img/footer.png");
+  background-size: contain;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+footer .subfooter a {
+  padding: 7px 10px;
+  background-color: #f2ce4f;
+  background-size: contain;
+  color: #1a2c4d;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  position: relative;
+  z-index: 1;
+}
+footer .subfooter a i {
+  padding-left: 5px;
+}
+footer .subfooter a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1a2c4d;
+  transition: all 0.3s;
+  z-index: -1;
+}
+footer .subfooter a:hover {
+  z-index: 1;
+  color: #f2ce4f;
+}
+footer .subfooter a:hover::before {
+  width: 100%;
+}
+footer .containerFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  padding: 15px 0;
+}
+footer .containerFooter a {
+  display: block;
+}
+footer .containerFooter a img {
+  width: 100px;
+  height: auto;
+}
+footer .containerFooter nav ul li a {
+  font-size: 18px;
+}
+footer .containerFooter nav ul li a::before {
+  height: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+footer .containerFooter nav ul li a:hover {
+  color: white;
 }
 
 ul {
@@ -69,6 +140,9 @@ ul li:first-child a:hover::before {
   width: 100%;
   position: fixed;
   background-color: white;
+}
+.menuFixe p {
+  color: #1a2c4d;
 }
 .menuFixe .containerMenuFixe {
   padding: 15px 0;
@@ -179,7 +253,7 @@ header .connexion a:hover::before {
   width: 100%;
 }
 
-.pseudo {
+.bold {
   font-weight: 700;
 }
 

@@ -1,7 +1,7 @@
 <?php 
     if(isset($_SESSION["nom"]))
     {
-        echo "<p>Bienvenue<span class='pseudo'> " . $_SESSION["nom"] . "</span></p>";
+        echo "<p>Bienvenue<span class='bold'> ".$_SESSION["prenom"]." ".$_SESSION["nom"]."</span></p>";
     }
 ?>
 
