@@ -53,6 +53,15 @@
     width: 100%;
     background-color: $second-color;
     padding-top: 170px;
+    position: relative;
+    .lineOpacity{
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        background-color: $tc-opacity;
+    }
     .containerWidth{
         width: 70%;
         margin: auto;
@@ -76,10 +85,64 @@
         height: 24px;
         width: 2px;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 30px;
         left: 30px;
         background-color: $first-color;
+    }
+}
+.club{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 50px;
+    position: relative;
+    
+    .victory{
+        position: absolute;
+        top: 50px;
+        left: 85px;
+        width: 600px;
+        height: auto;
+    }
+    .clubContent{
+        position: relative;
+        background-color: $tc-opacity;
+        font-family: $font-content;
+        color: $third-color;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 50%;
+        padding: 35px;
+        z-index: 9;
+        &::before{
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            background-color: $second-color;
+            height: 100%;
+            width: 100%;
+        }
+        h2{
+            background-color: transparent;
+            margin: 0;
+            padding-left:10px;
+            padding-top: 0;
+            position: relative;
+            &::before{
+                position:absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        .lastP{
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -101,9 +164,6 @@
         }
         p{
             margin-bottom: 10px;
-            font-weight: $font-weight-p;
-            line-height: 25px;
-            font-size: $font-size-p;
         }
         .lastP{
             margin-bottom: 20px;

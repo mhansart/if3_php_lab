@@ -20,6 +20,12 @@ body {
   height: 100%;
 }
 
+p {
+  font-weight: 300;
+  line-height: 25px;
+  font-size: 18px;
+}
+
 .btnBasis a {
   padding: 15px 20px;
   background-color: #f2ce4f;
@@ -330,6 +336,15 @@ header .connexion a {
   width: 100%;
   background-color: #1a2c4d;
   padding-top: 170px;
+  position: relative;
+}
+.containerContent .lineOpacity {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .containerContent .containerWidth {
   width: 70%;
@@ -345,7 +360,7 @@ header .connexion a {
   text-transform: uppercase;
   font-size: 25px;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 30px 30px 30px 42px;
   margin: 0px auto 50px auto;
 }
@@ -354,10 +369,64 @@ header .connexion a {
   height: 24px;
   width: 2px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 30px;
   left: 30px;
   background-color: #f2ce4f;
+}
+
+.club {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 50px;
+  position: relative;
+}
+.club .victory {
+  position: absolute;
+  top: 50px;
+  left: 85px;
+  width: 600px;
+  height: auto;
+}
+.club .clubContent {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-family: "Alegreya Sans", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  padding: 35px;
+  z-index: 9;
+}
+.club .clubContent::before {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: #1a2c4d;
+  height: 100%;
+  width: 100%;
+}
+.club .clubContent h2 {
+  background-color: transparent;
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 0;
+  position: relative;
+}
+.club .clubContent h2::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.club .clubContent p {
+  margin-bottom: 10px;
+}
+.club .clubContent .lastP {
+  margin-bottom: 20px;
 }
 
 .p-i-flex {
@@ -380,9 +449,6 @@ header .connexion a {
 }
 .p-i-flex .textContent p {
   margin-bottom: 10px;
-  font-weight: 300;
-  line-height: 25px;
-  font-size: 18px;
 }
 .p-i-flex .textContent .lastP {
   margin-bottom: 20px;
