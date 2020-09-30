@@ -19,6 +19,52 @@ body {
   background-color: #1a2c4d;
 }
 
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  display: flex;
+  align-items: center;
+}
+ul li a {
+  text-decoration: none;
+  color: #f2ce4f;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 9;
+}
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #f2ce4f;
+  transition: all 0.3s;
+  z-index: -1;
+}
+ul li a:hover {
+  color: #1a2c4d;
+}
+ul li a:hover::before {
+  width: 100%;
+}
+ul li:first-child a::before {
+  width: 0;
+}
+ul li:first-child a:hover {
+  color: #1a2c4d;
+}
+ul li:first-child a:hover::before {
+  width: 100%;
+}
+
 .menuFixe {
   width: 100%;
   position: fixed;
@@ -137,49 +183,39 @@ header .connexion a:hover::before {
   font-weight: 700;
 }
 
-ul {
-  list-style-type: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+.headerAccueil {
+  width: 100%;
+  position: fixed;
 }
-ul li {
+.headerAccueil .containerHeaderAccueil {
+  padding: 15px 0;
+  margin: auto;
+  width: 70%;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
-ul li a {
-  text-decoration: none;
+.headerAccueil .containerHeaderAccueil > * {
+  margin-left: 10px;
+}
+.headerAccueil .containerHeaderAccueil p {
   color: #f2ce4f;
-  text-transform: uppercase;
-  font-size: 20px;
-  padding: 15px 20px;
-  position: relative;
-  z-index: 9;
 }
-ul li a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background-color: #f2ce4f;
-  transition: all 0.3s;
-  z-index: -1;
+.headerAccueil .containerHeaderAccueil .facebook:hover {
+  background-color: white;
+  border-color: white;
 }
-ul li a:hover {
+.headerAccueil .containerHeaderAccueil .facebook:hover i {
   color: #1a2c4d;
 }
-ul li a:hover::before {
-  width: 100%;
+.headerAccueil .containerHeaderAccueil .connexion a::before {
+  background-color: white;
 }
-ul li:first-child a::before {
-  width: 0;
-}
-ul li:first-child a:hover {
+.headerAccueil .containerHeaderAccueil .connexion a:hover {
+  z-index: 1;
   color: #1a2c4d;
 }
-ul li:first-child a:hover::before {
+.headerAccueil .containerHeaderAccueil .connexion a:hover::before {
   width: 100%;
 }
 
@@ -223,46 +259,6 @@ ul li:first-child a:hover::before {
 }
 .accueil .containerAccueil .title .point {
   margin: 5px;
-}
-
-.leclub {
-  background-color: #1a2c4d;
-}
-
-.headerAccueil {
-  width: 100%;
-  position: fixed;
-}
-.headerAccueil .containerHeaderAccueil {
-  padding: 15px 0;
-  margin: auto;
-  width: 70%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.headerAccueil .containerHeaderAccueil > * {
-  margin-left: 10px;
-}
-.headerAccueil .containerHeaderAccueil p {
-  color: #f2ce4f;
-}
-.headerAccueil .containerHeaderAccueil .facebook:hover {
-  background-color: white;
-  border-color: white;
-}
-.headerAccueil .containerHeaderAccueil .facebook:hover i {
-  color: #1a2c4d;
-}
-.headerAccueil .containerHeaderAccueil .connexion a::before {
-  background-color: white;
-}
-.headerAccueil .containerHeaderAccueil .connexion a:hover {
-  z-index: 1;
-  color: #1a2c4d;
-}
-.headerAccueil .containerHeaderAccueil .connexion a:hover::before {
-  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

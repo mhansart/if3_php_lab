@@ -1,5 +1,56 @@
 @use "variables" as *;
 
+ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    li{
+        a{
+            text-decoration: none;
+            color: $first-color;
+            text-transform: uppercase;
+            font-size: $font-size-menu;
+            padding: 15px 20px;
+            position: relative;
+            z-index: 9;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $first-color;
+                transition: all 0.3s;
+                z-index: -1;
+            }
+            &:hover{
+                color: $second-color;
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+        
+        &:first-child{
+            a{
+                &::before{
+                    width: 0;
+                }
+                
+                &:hover{
+                    color: $second-color;
+                    &::before{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        display: flex;
+        align-items: center;
+    }
+}
 .menuFixe{
     width: 100%;
     position: fixed;
