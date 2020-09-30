@@ -146,6 +146,7 @@ ul li:first-child a:hover::before {
 }
 
 .menuFixe {
+  z-index: 1;
   width: 100%;
   position: fixed;
   background-color: white;
@@ -338,10 +339,115 @@ header .connexion a:hover::before {
 }
 .accueil .containerAccueil .title--little {
   font-size: 22px;
-  margin-bottom: 25px;
+  margin: 15px 0 25px 0;
 }
 .accueil .containerAccueil .title .point {
   margin: 5px;
+}
+
+.containerContent {
+  width: 100%;
+  background-color: #1a2c4d;
+  padding-top: 170px;
+}
+.containerContent .containerWidth {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleContent {
+  color: white;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: 25px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 30px 30px 30px 42px;
+  margin: 0px auto 50px auto;
+}
+.titleContent::before {
+  content: "";
+  height: 24px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  background-color: #f2ce4f;
+}
+
+.p-i-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.p-i-flex .textContent {
+  font-family: "Alegreya Sans", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 35px;
+}
+.p-i-flex .textContent h3 {
+  padding: 25px 0;
+  font-size: 22px;
+}
+.p-i-flex .textContent p {
+  margin-bottom: 10px;
+  font-weight: 300;
+  line-height: 25px;
+  font-size: 18px;
+}
+.p-i-flex .textContent a {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: #f2ce4f;
+  background-size: contain;
+  color: #1a2c4d;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  z-index: 1;
+}
+.p-i-flex .textContent a i {
+  padding-left: 5px;
+}
+.p-i-flex .textContent a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1a2c4d;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.p-i-flex .textContent a:hover {
+  z-index: 1;
+  color: #f2ce4f;
+}
+.p-i-flex .textContent a:hover::before {
+  width: 100%;
+}
+
+.picture {
+  width: 550px;
+  height: 550px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.picture img {
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

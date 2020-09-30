@@ -1,3 +1,5 @@
+    </div>
+</div>
 <footer>
     <div class="subfooter">
             <a href="https://www.facebook.com/ultimateskywalkers/">Retrouvez toutes nos actualités et nos évènements sur facebook <i class="fas fa-caret-right"></i> </a>

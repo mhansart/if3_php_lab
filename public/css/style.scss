@@ -1,8 +1,10 @@
 @use "variables" as *;
 @import "basic";
-@import "menu_footer";
-@import "menu_fixe";
-@import "menu_connexion";
+@import "buttons";
+@import "menu_style/menu_footer";
+@import "menu_style/menu_fixe";
+@import "menu_style/menu_connexion";
+
 
 .accueil{
     background-image: url("../img/accueil.jpg");
@@ -38,16 +40,119 @@
             }
             &--little{
                 font-size: $font-size-title; 
-                margin-bottom: 25px;
+                margin: 15px 0 25px 0;
                 
             }
             .point{
                 margin: 5px;
             }
         }
+    }   
+}
+.containerContent{
+    width: 100%;
+    background-color: $second-color;
+    padding-top: 170px;
+    .containerWidth{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    
-    
+}
+
+.titleContent{
+    color: $third-color;
+    display: inline-flex;
+    text-transform: uppercase;
+    font-size: $font-size-btitle;
+    position: relative;
+    background-color: $tc-opacity;
+    padding: 30px 30px 30px 42px;
+    margin: 0px auto 50px auto;
+    &::before{
+        content: "";
+        height: 24px;
+        width: 2px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 30px;
+        background-color: $first-color;
+    }
+}
+
+.p-i-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    .textContent{
+        font-family: $font-content;
+        color: $third-color;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-left: 35px;
+        h3{
+            padding: 25px 0;
+            font-size: $font-size-title;
+        }
+        p{
+            margin-bottom: 10px;
+            font-weight: $font-weight-p;
+            line-height: 25px;
+            font-size: $font-size-p;
+
+        }
+        a{
+            margin-top: 20px;
+            padding: 15px 20px;
+            background-color: $first-color;
+            background-size: contain;
+            color: $second-color;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            position: relative;
+            font-family: $main-font;
+            font-size: $font-size-menu;
+            z-index: 1;
+            i{
+                padding-left: 5px;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: $second-color;
+                transition: all 0.3s;
+                z-index: -1;
+
+            }
+            &:hover{
+                z-index: 1;
+                color: $first-color;
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+    .picture{
+        width: 550px;
+        height: 550px;
+        border-radius: 100%;
+        overflow: hidden;
+            img{
+                height: 100%;
+            }
 }
 
 

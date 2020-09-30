@@ -1,0 +1,91 @@
+@use "../variables" as *;
+footer{
+    background-color: $second-color;
+    .subfooter{
+        background-image: url("../img/footer.png");
+        background-size: contain;
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        
+        a{
+            padding: 7px 10px;
+            background-color: $first-color;
+            background-size: contain;
+            color: $second-color;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            position: relative;
+            z-index: 1;
+            i{
+                padding-left: 5px;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: $second-color;
+                transition: all 0.3s;
+                z-index: -1;
+
+            }
+            &:hover{
+                z-index: 1;
+                color: $first-color;
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .containerFooter{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        margin: auto;
+        padding: 15px 0;
+        a{
+            display: block;
+            img{
+                width: 100px;
+                height: auto;
+            }
+        }
+        nav{
+            ul{
+                li{
+                    a{
+                        font-size: 18px;
+                        &::before{
+                            height: 8px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                        &:hover{
+                            color: $third-color;
+                            &::before{
+                                width: 1px;
+                            }
+                        }
+                    }
+                    &:first-child{
+                        a{  
+                            &:hover{
+                                color: $third-color;
+                                &::before{
+                                    width: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
