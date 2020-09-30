@@ -8,6 +8,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 * {
   box-sizing: border-box;
   transition: all 0.3s;
@@ -18,6 +20,7 @@ body {
   font-family: "Oswald", sans-serif;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 p {
@@ -62,12 +65,70 @@ p {
   width: 100%;
 }
 
+.headerHome {
+  width: 100%;
+}
+.headerHome .containerHeaderHome {
+  margin: auto;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.headerHome .containerHeaderHome > * {
+  margin-left: 10px;
+}
+.headerHome .containerHeaderHome p {
+  color: white;
+}
+.headerHome .containerHeaderHome .facebook {
+  border-radius: 100%;
+  border: 3px solid #f2ce4f;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headerHome .containerHeaderHome .facebook:hover {
+  background-color: white;
+  border-color: white;
+}
+.headerHome .containerHeaderHome .facebook:hover i {
+  color: #1a2c4d;
+}
+.headerHome .containerHeaderHome .facebook i {
+  font-size: 15px;
+  color: #f2ce4f;
+}
+.headerHome .containerHeaderHome .connexion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headerHome .containerHeaderHome .connexion a {
+  padding: 7px 10px;
+  font-size: 15px;
+}
+.headerHome .containerHeaderHome .connexion a::before {
+  background-color: white;
+}
+.headerHome .containerHeaderHome .connexion a:hover {
+  z-index: 1;
+  color: #1a2c4d;
+}
+.headerHome .containerHeaderHome .connexion a:hover::before {
+  width: 100%;
+}
+
 footer {
   background-color: #1a2c4d;
 }
 footer .subfooter {
   background-image: url("../img/footer.png");
-  background-size: contain;
+  background-size: cover;
   padding: 50px 0;
   display: flex;
   justify-content: center;
@@ -158,7 +219,7 @@ ul li:first-child a:hover::before {
 }
 
 .menuFixe {
-  z-index: 1;
+  z-index: 9;
   width: 100%;
   position: fixed;
   background-color: white;
@@ -218,10 +279,13 @@ ul li:first-child a:hover::before {
 
 header {
   width: 100%;
-  position: fixed;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: fixed;
+}
+header.headerHome {
+  position: absolute;
 }
 header .facebook {
   border-radius: 100%;
@@ -254,45 +318,10 @@ header .connexion a {
   font-weight: 700;
 }
 
-.headerAccueil {
-  width: 100%;
-  position: fixed;
-}
-.headerAccueil .containerHeaderAccueil {
-  padding: 15px 0;
-  margin: auto;
-  width: 70%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.headerAccueil .containerHeaderAccueil > * {
-  margin-left: 10px;
-}
-.headerAccueil .containerHeaderAccueil p {
-  color: #f2ce4f;
-}
-.headerAccueil .containerHeaderAccueil .facebook:hover {
-  background-color: white;
-  border-color: white;
-}
-.headerAccueil .containerHeaderAccueil .facebook:hover i {
-  color: #1a2c4d;
-}
-.headerAccueil .containerHeaderAccueil .connexion a::before {
-  background-color: white;
-}
-.headerAccueil .containerHeaderAccueil .connexion a:hover {
-  z-index: 1;
-  color: #1a2c4d;
-}
-.headerAccueil .containerHeaderAccueil .connexion a:hover::before {
-  width: 100%;
-}
-
 .accueil {
   background-image: url("../img/accueil.jpg");
-  background-size: cover;
+  background-size: auto 100%;
+  background-position: center;
   overflow: hidden;
   width: auto;
   height: 100%;
@@ -342,9 +371,9 @@ header .connexion a {
   width: 100%;
   height: 300px;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #2e3f5d;
 }
 .containerContent .containerWidth {
   width: 70%;
@@ -383,14 +412,15 @@ header .connexion a {
 }
 .club .victory {
   position: absolute;
-  top: 50px;
-  left: 85px;
+  top: 20%;
+  left: -5%;
   width: 600px;
   height: auto;
+  z-index: 1;
 }
 .club .clubContent {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #384765;
   font-family: "Alegreya Sans", sans-serif;
   color: white;
   display: flex;
@@ -398,17 +428,6 @@ header .connexion a {
   align-items: flex-start;
   width: 50%;
   padding: 35px;
-  z-index: 9;
-}
-.club .clubContent::before {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  background-color: #1a2c4d;
-  height: 100%;
-  width: 100%;
 }
 .club .clubContent h2 {
   background-color: transparent;
@@ -440,7 +459,7 @@ header .connexion a {
   color: white;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 45%;
   padding-left: 35px;
 }
 .p-i-flex .textContent h3 {

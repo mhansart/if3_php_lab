@@ -3,7 +3,7 @@ footer{
     background-color: $second-color;
     .subfooter{
         background-image: url("../img/footer.png");
-        background-size: contain;
+        background-size: cover;
         padding: 50px 0;
         display: flex;
         justify-content: center;

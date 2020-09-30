@@ -1,0 +1,59 @@
+@use "../variables" as *;
+.headerHome{
+    width: 100%;
+    .containerHeaderHome{
+        margin: auto;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        padding-top: 15px;
+        align-items: center;
+        justify-content: flex-end;
+        &>*{
+            margin-left: 10px;
+        }
+        p{
+            color: $third-color;
+        }
+        .facebook{
+            border-radius: 100%;
+            border: 3px solid $first-color;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover{
+                background-color: $third-color;
+                border-color: $third-color;
+                i{
+                    color: $second-color;
+                }
+            }
+            i{
+                font-size: 15px;
+                color: $first-color;
+            }
+        }
+        .connexion{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                padding: 7px 10px;
+                font-size: 15px;
+                &::before{
+                    background-color: $third-color;
+                }
+                &:hover{
+                    z-index: 1;
+                    color: $second-color;
+                    &::before{
+                        width: 100%;
+                    }
+                }    
+            }
+        }
+    }
+    
+}

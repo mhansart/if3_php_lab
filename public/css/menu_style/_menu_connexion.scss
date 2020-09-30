@@ -2,10 +2,13 @@
 
 header{
     width: 100%;
-    position: fixed;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: fixed;
+    &.headerHome{
+        position: absolute;
+    }
     .facebook{
         border-radius: 100%;
         border: 3px solid $first-color;
@@ -35,47 +38,4 @@ header{
 }
 .bold{
     font-weight: $font-weight-bold;
-}
-.headerAccueil{
-    width: 100%;
-    position: fixed;
-    .containerHeaderAccueil{
-        padding: 15px 0;
-        margin: auto;
-        width: 70%;
-        display: flex;
-        justify-content: flex-end;
-        align-items:center;
-        &>*{
-            margin-left:10px;
-        }
-        p{
-            color: $first-color;
-        }
-        .facebook{
-            &:hover{
-                background-color: $third-color;
-                border-color: $third-color;
-                i{
-                        color: $second-color;
-                }
-            }
-        }
-        .connexion{
-            a{
-                &::before{
-                    background-color: $third-color;
-                }
-                &:hover{
-                    z-index: 1;
-                    color: $second-color;
-                    &::before{
-                        width: 100%;
-                    }
-                }    
-            }
-        }
-
-    }
-
 }
