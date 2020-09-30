@@ -29,33 +29,7 @@ header{
         justify-content: center;
         a{
             padding: 7px 10px;
-            background-color: $first-color;
-            color: $second-color;
             font-size: 15px;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: block;
-            position: relative;
-            z-index: 1;
-            &::before{
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 0;
-                height: 100%;
-                background-color: $second-color;
-                transition: all 0.3s;
-                z-index: -1;
-
-            }
-            &:hover{
-                z-index: 1;
-                color: $first-color;
-                &::before{
-                    width: 100%;
-                }
-            }
         }
     }
 }

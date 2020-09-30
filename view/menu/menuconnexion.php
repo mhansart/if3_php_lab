@@ -5,7 +5,7 @@
     }
 ?>
 
-    <div class="connexion"><?php 
+    <div class="connexion btnBasis"><?php 
             if(isset($_SESSION["nom"]))
             {
                 echo '<a href="?section=moncompte">Mon compte</a>';
