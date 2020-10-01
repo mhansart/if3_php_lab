@@ -1,61 +1,42 @@
-<?php include("view/menu/menu.php");  ?>
-<div class="containerWidth">
-    <div class="p-i-flex">
-        <div class="imgContact"><img src="public/img/contact.jpg" alt="contact"></div>
-    <form action="#" method="POST">
-        <h2>Contactez nous</h2>
-        <label for="nom">Nom</label>
-        <input type="text" name="nom" id="nom">
-        <label for="prenom">Prénom</label>
-        <input type="text" name="prenom" id="prenom">
-        <label for="email">E-mail</label>
-        <input type="text" name="email" id="email" required>
-        <label for="message">Message</label>
-        <textarea type="text" name="message" id="message" required></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
-    <?php
-        require("phpmailer/class.phpmailer.php");
-        
-        $mail = new PHPMailer();
-        
-        $mail->IsSMTP(); //On utilise le mode SMTP pour la lib mailer
-        $mail->Host = "smtp.gmail.com";
-        $mail->SMTPAuth = true; //authentification requis
-        $mail->Username = "hansart.marine@gmail.com"; // SMTP username
-        $mail->Password = "heff2sma"; // SMTP password
-        
-        $mail->From = "monsite@mondomaine.fr";
-        $mail->FromName = "nom";
-        $mail->AddAddress("xxxx@xxxx.com");
-        
-        
-        $mail->Subject = "Sujet";
-        $mail->Body = "Le message";
-        
-        if(!$mail->Send())
-        {
-        echo "Message could not be sent. <p>";
-        echo "Mailer Error: " . $mail->ErrorInfo;
-        exit;
-        }
-        
-        echo "Message has been sent";
-    ?>
-    <?php
-    if (isset($_POST['message'])) {
-        $position_arobase = strpos($_POST['email'], '@');
-        if ($position_arobase === false)
-            echo '<p>Votre email doit comporter un arobase.</p>';
-        else {
-            $retour = mail('hansart.marine@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
-            if($retour)
-                echo '<p>Votre message a été envoyé.</p>';
-            else
-                echo '<p>Erreur.</p>';
+<?php
+        $etat="";
+        ini_set('SMTP','localhost');
+        ini_set('smtp_port',1025);
+        //aller voir => http://127.0.0.1:1080/#/
+        if(isset($_POST['message'])){
+        $entete  = 'MIME-Version: 1.0' . "\r\n";
+        $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+        $entete .= 'From: ' . $_POST['email'] . "\r\n";
+
+        $message = '<h1>Message envoyé depuis la page Contact des Skywalkers</h1>
+        <p><b>Nom : </b>' . $_POST['nom'].' '. $_POST['prenom'] . '<br>
+        <b>Email : </b>' . $_POST['email'] . '<br>
+        <b>Message : </b>' . $_POST['message'] . '</p>';
+
+        $retour = mail('hansart.marine@gmail.com', 'Envoi depuis page Contact', $message, $entete);
+        if($retour) {
+            $etat.= 'Votre message a bien été envoyé.';
         }
     }
     ?>
+<?php include("view/menu/menu.php");  ?>
+<div class="containerWidth">
+    <div class="p-i-flex flexContact">
+        <div class="imgContact"><img src="public/img/contact.jpg" alt="contact"></div>
+        <form method="post">
+            <h2 class="titleContent">Contact</h2>
+            <label>Nom:</label>
+            <input type="text" name="nom" required>
+            <label>Prénom:</label>
+            <input type="text" name="prenom" required>
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <label>Message:</label>
+            <textarea rows="7" name="message" required></textarea>
+            <button type="submit">Envoyer</button>
+            <p><?= $etat; ?></p>
+           
+    </form>
     </div>
 </div>
 <?php include("view/menu/menufooter.php");  ?>
