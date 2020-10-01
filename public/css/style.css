@@ -573,7 +573,7 @@ header .connexion a {
   font-family: "Alegreya Sans", sans-serif;
   color: #1a2c4d;
   padding: 5px 5px;
-  width: 100%;
+  width: 50%;
 }
 .flexContact form input:focus {
   outline: none;
