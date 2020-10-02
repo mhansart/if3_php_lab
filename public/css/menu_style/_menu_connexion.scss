@@ -17,6 +17,7 @@ header{
         display: flex;
         align-items: center;
         justify-content: center;
+        text-decoration: none;
         &:hover{
             background-color: $second-color;
             border-color: $second-color;

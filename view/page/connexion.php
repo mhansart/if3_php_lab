@@ -1,19 +1,19 @@
 <?php include("view/menu/menu.php");  ?>
 <div class="containerWidth">
     <div class="p-i-flex flexContact">
-        <div class="imgContact"><img src="public/img/contact.jpg" alt="contact"></div>
+        <div class="imgContact"><img src="public/img/connexion.jpg" alt="contact"></div>
         <div class="connexionForm">
-        <h2 class="titleContent">Connexion</h2>
-            <form method="post">
-                <h3>Déjà inscrit?</h3>
+            <form method="post" id="formConnexion">
+            <h2 class="titleContent">Connexion</h2>
                 <label>Nom d'utilisateur:</label>
                 <input type="text" name="username" required>
                 <label>Mot de passe:</label>
                 <input type="text" name="mdp" required>
                 <button type="submit">Se connecter</button>
+                <p>Pas encore de compte? <span class="bold" id="inscrisToi">Inscris-toi !</span></p>
             </form>
-            <form method="post">
-                <h3>Pas encore inscrit?</h3>
+            <form method="post" id="formInscription">
+            <h2 class="titleContent">Inscription</h2>
                 <label>Nom:</label>
                 <input type="text" name="nom" required>
                 <label>Prénom:</label>
@@ -42,6 +42,7 @@
                 <label>Mot de passe:</label>
                 <input type="text" name="mdp" required>
                 <button type="submit">S'inscrire</button>
+                <p>Déjà inscris? <span class="bold" id="connecteToi">Connecte-toi !</span></p>
             </form>
         </div>
     </div>

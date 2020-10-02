@@ -295,6 +295,7 @@ header .facebook {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 header .facebook:hover {
   background-color: #1a2c4d;
@@ -538,7 +539,7 @@ header .connexion a {
 
 .flexContact {
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .flexContact form {
   width: 40%;
@@ -550,7 +551,6 @@ header .connexion a {
   align-items: flex-start;
   padding: 30px;
   margin-left: 30px;
-  flex-grow: 1;
 }
 .flexContact form .titleContent {
   background-color: transparent;
@@ -573,7 +573,7 @@ header .connexion a {
   font-family: "Alegreya Sans", sans-serif;
   color: #1a2c4d;
   padding: 5px 5px;
-  width: 50%;
+  width: 100%;
 }
 .flexContact form input:focus {
   outline: none;
@@ -604,7 +604,7 @@ header .connexion a {
   margin: 0;
 }
 .flexContact form select {
-  width: 70%;
+  width: 100%;
   height: 35px;
 }
 .flexContact form select:focus {
@@ -653,18 +653,22 @@ header .connexion a {
   flex-grow: 1;
   width: 40%;
 }
-.connexionForm h2 {
-  margin-left: 30px;
-  margin-bottom: 15px;
-  width: 100%;
-}
 .connexionForm form {
-  width: 100%;
+  width: 60%;
   margin-bottom: 15px;
 }
 .connexionForm form h3 {
   font-size: 18px;
   margin-bottom: 15px;
+}
+.connexionForm form #connecteToi {
+  cursor: pointer;
+}
+.connexionForm form #inscrisToi {
+  cursor: pointer;
+}
+.connexionForm #formInscription {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
