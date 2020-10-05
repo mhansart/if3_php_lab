@@ -667,8 +667,9 @@ header .connexion a {
 .connexionForm form #inscrisToi {
   cursor: pointer;
 }
-.connexionForm #formInscription {
-  display: none;
+.connexionForm form p span a {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

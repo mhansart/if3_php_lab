@@ -350,9 +350,16 @@
         #inscrisToi{
             cursor: pointer;
         }
-    }
-    #formInscription{
-        display: none;
+        p{
+            span{
+                a{
+                    text-decoration: none;
+                    color: $third-color;
+                }
+            }
+            
+        }
+        
     }
 }
 

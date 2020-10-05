@@ -23,8 +23,14 @@
             case 'deconnexion':
                 include("controller/deconnexionController.php");
                 break;
-            case 'moncompte':
-                include("controller/moncompteController.php");
+            case 'compteCoach':
+                include("controller/compteCoachController.php");
+                break;
+            case 'compteJoueur':
+                include("controller/compteJoueurController.php");
+                break;
+            case 'inscription':
+                include("controller/inscriptionController.php");
                 break;
             
             default:

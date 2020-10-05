@@ -1,22 +1,28 @@
 <?php 
-    $message = "";
-    // verifie si formulaire est soumis
-    if(isset($_POST["nom"], $_POST["prenom"]))
-    {
-        // vérifier si le nom est rempli
-        if(trim($_POST["nom"]) !== "" && trim($_POST["prenom"]) !== "")
+    try{    // connexion avec la base de données avec PDO   
+        $message="";
+        if(isset($_POST['username'],$_POST['mdpUser']))
         {
-            // enregistre dans une variable de session
-            $_SESSION["nom"] = trim($_POST["nom"]);
-            $_SESSION["prenom"] = trim($_POST["prenom"]);
-            header("Location:?section=moncompte");
+            if($_POST['username']!="" && $_POST['mdpUser']!=""){
+                $user =$_POST['username'];
+                $mdpUser=$_POST['mdpUser'];
+                $basededonnees = "mysql:host=localhost;dbname=skywalkers;charset=utf8";    
+                $utilisateur = "root";    
+                $motdepasse = "";    
+                $pdo = new PDO($basededonnees, $utilisateur, $motdepasse);
+                // sélection des données   
+                $requete = "SELECT joueur_nom, joueur_nom_user, joueur_mdp FROM joueurs WHERE joueur_nom_user = '$user";
+                $joueurs = $pdo->query($requete);    
+                foreach($joueurs as $joueur){ 
+                    if($joueur['joueur_mdp'] == $mdpUser){
+                        $message = "mot de passe correct";
+                    } else{
+                        $message="mdp incorrect";
+                    }   
+                }   
+            }
         }
-        else 
-        {
-            $message = '<p class="error">Erreur : veuillez remplir votre nom et prénom</p>';
-        }
-    }
-
-
-    include("view/page/connexion.php");
-?>
+    }catch(PDOException $e){    echo $e->getMessage();}
+        include("view/page/connexion.php");
+?> 
+     
