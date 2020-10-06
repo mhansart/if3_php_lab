@@ -1,6 +1,7 @@
 @use "variables" as *;
 @import "basic";
 @import "buttons";
+@import "listJoueurs";
 @import "menu_style/menu_header_home";
 @import "menu_style/menu_footer";
 @import "menu_style/menu_fixe";
@@ -362,7 +363,44 @@
         
     }
 }
-
+// compte coach
+.containerCoach{
+    width: 100%;
+    display: flex;
+    padding-bottom: 50px;
+    .col1{
+        width: 60%;
+    }
+    .col2{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .btnAction{
+            margin-top: 15px;
+            background-color: $tc-opacity;
+            width: 100%;
+            .titleContent{
+                background-color: transparent;
+                margin: 0;
+                cursor: pointer;
+                width: 100%;
+                font-size: $font-size-menu;
+                &::before{
+                    height: $font-size-menu;
+                }
+                a{
+                    text-decoration: none;
+                    color: $third-color;
+                }
+            }
+            #listeJoueurs{
+                display: none;
+            }
+        }
+        
+    }
+}
 
 
 

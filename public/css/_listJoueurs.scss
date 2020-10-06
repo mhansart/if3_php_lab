@@ -1,0 +1,41 @@
+@use "variables" as *;
+
+.listJoueurs{
+        padding: 30px;
+    .oneJoueur{
+        margin-bottom: 15px;
+        .nomVisible{
+            display: flex;
+            align-items: center;
+            .initiales{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                height: 40px;
+                width: 40px;
+                background-color: $tc-opacity;
+                color: $second-color;
+                margin-right: 15px;        
+            }
+            .nomPrenom{
+                cursor: pointer;
+                transition: all 0.1s;
+                &:hover{
+                    color: $tc-opacity;
+                }
+            }
+        }
+        
+        p{
+            color: $third-color;
+            font-size: $font-size-p; 
+            font-family: $font-content;
+        }
+        .joueurProprietes{
+            display: none;
+            padding-left:55px;
+        }
+    }
+    
+}

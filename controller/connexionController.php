@@ -16,14 +16,16 @@
                 $joueurProperties = $objet->fetchAll();  
                 var_dump($joueurProperties);
                 foreach($joueurProperties as $joueurProperty){ 
-                    if($joueurProperty['joueur_mdp']==$mdpUser){
+                    var_dump($joueurProperty['joueur_mdp']);
+                    var_dump($mdpUser);
+                    if($joueurProperty['joueur_mdp'] ==$mdpUser ){
                         $_SESSION['nom']=$joueurProperty['joueur_nom'];
                         $_SESSION['prenom']=$joueurProperty['joueur_prenom'];
-                        if($joueurProperty['joueur_role'=='coach']){
-                            header("Location:?section=compteCoach");
-                        }else{
-                            header("Location:?section=compteJoueur");
-                        }
+                        if($joueurProperty['joueur_role']=='coach'){
+                             header("Location:?section=compteCoach");
+                         }else{
+                             header("Location:?section=compteJoueur");
+                         }
                     }else{
                         echo "mauvais mdp";
                     }

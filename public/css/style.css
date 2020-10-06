@@ -10,6 +10,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 * {
   box-sizing: border-box;
   transition: all 0.3s;
@@ -63,6 +67,44 @@ p {
 }
 .btnBasis a:hover::before {
   width: 100%;
+}
+
+.listJoueurs {
+  padding: 30px;
+}
+.listJoueurs .oneJoueur {
+  margin-bottom: 15px;
+}
+.listJoueurs .oneJoueur .nomVisible {
+  display: flex;
+  align-items: center;
+}
+.listJoueurs .oneJoueur .nomVisible .initiales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #1a2c4d;
+  margin-right: 15px;
+}
+.listJoueurs .oneJoueur .nomVisible .nomPrenom {
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.listJoueurs .oneJoueur .nomVisible .nomPrenom:hover {
+  color: rgba(255, 255, 255, 0.3);
+}
+.listJoueurs .oneJoueur p {
+  color: white;
+  font-size: 18px;
+  font-family: "Alegreya Sans", sans-serif;
+}
+.listJoueurs .oneJoueur .joueurProprietes {
+  display: none;
+  padding-left: 55px;
 }
 
 .headerHome {
@@ -670,6 +712,43 @@ header .connexion a {
 .connexionForm form p span a {
   text-decoration: none;
   color: white;
+}
+
+.containerCoach {
+  width: 100%;
+  display: flex;
+  padding-bottom: 50px;
+}
+.containerCoach .col1 {
+  width: 60%;
+}
+.containerCoach .col2 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.containerCoach .col2 .btnAction {
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+.containerCoach .col2 .btnAction .titleContent {
+  background-color: transparent;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px;
+}
+.containerCoach .col2 .btnAction .titleContent::before {
+  height: 20px;
+}
+.containerCoach .col2 .btnAction .titleContent a {
+  text-decoration: none;
+  color: white;
+}
+.containerCoach .col2 .btnAction #listeJoueurs {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

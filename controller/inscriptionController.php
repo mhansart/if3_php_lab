@@ -15,6 +15,7 @@
                 if($role=="coach"){
                     header("Location:?section=compteCoach");
                 }else{
+                    echo "non";
                     header("Location:?section=compteJoueur");
                 }
                 
