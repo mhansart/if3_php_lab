@@ -2,5 +2,5 @@
     // verifie
 
 
-    include("view/page/lesentrainements.php");
+    require_once("view/page/lesentrainements.php");
 ?>

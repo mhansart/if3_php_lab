@@ -12,18 +12,18 @@
                 $mdp=$_POST["mdp"];
                 $_SESSION["nom"] = trim($nom);
                 $_SESSION["prenom"] = trim($prenom);
-                if($role=="coach"){
-                    header("Location:?section=compteCoach");
-                }else{
-                    echo "non";
-                    header("Location:?section=compteJoueur");
-                }
+                $_SESSION["role"] = trim($role);
+                $_SESSION["niveau"] = trim($niveau);
+                $_SESSION["position"] = trim($position);
+                $_SESSION["email"] = trim($email);
+
+                header("Location:?section=moncompte");
                 
                 $basededonnees = "mysql:host=localhost;dbname=skywalkers;charset=utf8";        
                 $identifiant = "root";        
                 $motdepasse = "";        
                 $pdo = new PDO($basededonnees, $identifiant, $motdepasse, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-                $requeteInscription = "INSERT INTO joueurs (joueur_nom,joueur_prenom,joueur_email,joueur_position,joueur_niveau,joueur_role,joueur_mdp,joueur_nom_user) VALUES (:nom,:prenom,:email,:position,:niveau,:roles,:mdp,LOWER(CONCAT(LEFT(joueur_prenom,2),LEFT(joueur_nom,4))))";      
+                $requeteInscription = "INSERT INTO joueurs (joueur_nom,joueur_prenom,joueur_email,joueur_position,joueur_niveau,joueur_role,joueur_mdp,joueur_nom_user) VALUES (:nom,:prenom,:email,:position,:niveau,:roles,:mdp,CONCAT(LEFT(joueur_prenom,2),LEFT(joueur_nom,4)))";      
                 $objet = $pdo->prepare($requeteInscription);        
                 $objet->execute(array(            
                     ":nom" => trim($nom),
@@ -40,5 +40,5 @@
     catch(PDOException $e){    
         $message.=$e->getMessage();
     }  
-    include("view/page/inscription.php"); 
+    require_once("view/page/inscription.php"); 
 ?>

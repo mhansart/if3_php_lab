@@ -1,6 +1,10 @@
 <?php 
-    try{    // connexion avec la base de données avec PDO   
-        $message="";
+    try{    // connexion avec la base de données avec PDO 
+        $messageMdp ="";  
+        if(!(isset($_SESSION["tentatives"])))
+            {
+                $_SESSION["tentatives"]=0;
+            }
         if(isset($_POST['username'],$_POST['mdpUser']))
         {
             if($_POST['username']!="" && $_POST['mdpUser']!=""){
@@ -11,28 +15,32 @@
                 $motdepasse = "";    
                 $pdo = new PDO($basededonnees, $utilisateur, $motdepasse);
                 // sélection des données   
-                $requete = "SELECT joueur_nom_user, joueur_mdp,joueur_role,joueur_nom, joueur_prenom FROM joueurs WHERE joueur_nom_user = '$user'";
+                $requete = "SELECT joueur_nom_user, joueur_mdp,joueur_role,joueur_nom, joueur_prenom,joueur_position,joueur_niveau,joueur_email FROM joueurs WHERE joueur_nom_user = '$user'";
                 $objet = $pdo->query($requete); 
                 $joueurProperties = $objet->fetchAll();  
-                var_dump($joueurProperties);
                 foreach($joueurProperties as $joueurProperty){ 
-                    var_dump($joueurProperty['joueur_mdp']);
-                    var_dump($mdpUser);
                     if($joueurProperty['joueur_mdp'] ==$mdpUser ){
                         $_SESSION['nom']=$joueurProperty['joueur_nom'];
                         $_SESSION['prenom']=$joueurProperty['joueur_prenom'];
-                        if($joueurProperty['joueur_role']=='coach'){
-                             header("Location:?section=compteCoach");
-                         }else{
-                             header("Location:?section=compteJoueur");
-                         }
+                        $_SESSION['role']=$joueurProperty['joueur_role'];
+                        $_SESSION["niveau"] = $joueurProperty['joueur_niveau'];
+                        $_SESSION["position"] = $joueurProperty['joueur_position'];
+                        $_SESSION["email"] = $joueurProperty['joueur_email'];
+                        
+                        header("Location:?section=moncompte");
                     }else{
-                        echo "mauvais mdp";
+                        if($_SESSION["tentatives"] == 2 && $joueurProperty['joueur_mdp'] !==$mdpUser){
+                            header("Location:?section=comptebloque");
+                        }else{
+                        $messageMdp="Cet utilisateur ou ce mot de passe n'est pas correct";
+                        $_SESSION["tentatives"]++;
+                        echo $_SESSION["tentatives"];
+                        }
                     }
                 }
             }
         }
     }catch(PDOException $e){    echo $e->getMessage();}
-        include("view/page/connexion.php");
+        require_once("view/page/connexion.php");
 ?> 
      

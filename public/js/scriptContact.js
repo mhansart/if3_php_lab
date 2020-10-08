@@ -1,0 +1,1 @@
+contact.classList.add("active");

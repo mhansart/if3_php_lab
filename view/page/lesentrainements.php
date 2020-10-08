@@ -1,4 +1,4 @@
-<?php include("view/menu/menu.php");  ?>
+<?php require_once("view/menu/menu.php");  ?>
 <div class="containerWidth">   
     <h2 class="titleContent">Les entraînements</h2>
     <h3 class="titleCategory">Adultes</h3>
@@ -23,6 +23,6 @@
         <div class="btnBasis contactTraining"><a href="?section=contact">Plus d'infos? Contactez-nous<i class="fas fa-caret-right"></i> </a></div>
     </div>
     
-<?php include("view/menu/menufooter.php");  ?>
-<script src="public/js/script.js"></script>
-<?php include("view/html/footer.php"); ?>
+<?php require_once("view/menu/menufooter.php");  ?>
+<script src="public/js/scriptLesEntrainements.js"></script>
+<?php require_once("view/html/footer.php"); ?>

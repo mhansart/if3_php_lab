@@ -1,3 +1,16 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&display=swap");
@@ -67,44 +80,6 @@ p {
 }
 .btnBasis a:hover::before {
   width: 100%;
-}
-
-.listJoueurs {
-  padding: 30px;
-}
-.listJoueurs .oneJoueur {
-  margin-bottom: 15px;
-}
-.listJoueurs .oneJoueur .nomVisible {
-  display: flex;
-  align-items: center;
-}
-.listJoueurs .oneJoueur .nomVisible .initiales {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #1a2c4d;
-  margin-right: 15px;
-}
-.listJoueurs .oneJoueur .nomVisible .nomPrenom {
-  cursor: pointer;
-  transition: all 0.1s;
-}
-.listJoueurs .oneJoueur .nomVisible .nomPrenom:hover {
-  color: rgba(255, 255, 255, 0.3);
-}
-.listJoueurs .oneJoueur p {
-  color: white;
-  font-size: 18px;
-  font-family: "Alegreya Sans", sans-serif;
-}
-.listJoueurs .oneJoueur .joueurProprietes {
-  display: none;
-  padding-left: 55px;
 }
 
 .headerHome {
@@ -262,9 +237,47 @@ ul li:first-child a:hover::before {
 
 .menuFixe {
   z-index: 9;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   position: fixed;
   background-color: white;
+}
+.menuFixe .menuCompte {
+  z-index: -2;
+  width: 100%;
+  background-color: #f2ce4f;
+  width: 100%;
+}
+.menuFixe .menuCompte .containerMenuCompte {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+.menuFixe .menuCompte .containerMenuCompte nav ul li a {
+  color: #1a2c4d;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+.menuFixe .menuCompte .containerMenuCompte nav ul li a.activecompte {
+  color: #f2ce4f;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+.menuFixe .menuCompte .containerMenuCompte nav ul li a.activecompte::before {
+  width: 100%;
+  background-color: #1a2c4d;
+}
+.menuFixe .menuCompte .containerMenuCompte nav ul li a::before {
+  width: 0px;
+  background-color: #1a2c4d;
+}
+.menuFixe .menuCompte .containerMenuCompte nav ul li a:hover {
+  color: #f2ce4f;
+}
+.menuFixe .menuCompte .containerMenuCompte nav ul li a:hover::before {
+  width: 100%;
 }
 .menuFixe p {
   color: #1a2c4d;
@@ -287,10 +300,22 @@ ul li:first-child a:hover::before {
   display: block;
   height: 114px;
   width: auto;
+  position: relative;
 }
 .menuFixe .containerMenuFixe .logodark a img {
   width: auto;
   height: 100%;
+}
+.menuFixe .containerMenuFixe .logodark a::before {
+  content: "";
+  z-index: -1;
+  height: 135px;
+  width: 135px;
+  border-radius: 300px;
+  background-color: white;
+  position: absolute;
+  top: -17px;
+  left: 32px;
 }
 .menuFixe .containerMenuFixe .d-flex-menu {
   display: flex;
@@ -317,6 +342,14 @@ ul li:first-child a:hover::before {
 .menuFixe .containerMenuFixe .d-flex-menu .menuaccueil-menuFixe nav ul li a {
   color: #1a2c4d;
   padding: 7px 12px;
+}
+.menuFixe .containerMenuFixe .d-flex-menu .menuaccueil-menuFixe nav ul li a.active::before {
+  width: 100%;
+  background-color: #f2ce4f;
+}
+
+.invisible {
+  display: none;
 }
 
 header {
@@ -361,134 +394,511 @@ header .connexion a {
   font-weight: 700;
 }
 
-.accueil {
-  background-image: url("../img/accueil.jpg");
-  background-size: cover;
-  overflow: hidden;
-  width: auto;
-  height: 100%;
+.containerJoueurs {
+  width: 100%;
+  display: flex;
+  padding-bottom: 50px;
 }
-.accueil .containerAccueil {
-  height: 100%;
+.containerJoueurs .col1 {
+  width: 100%;
+}
+.containerJoueurs .col1 .listJoueurs {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-.accueil .containerAccueil .logo_big {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.accueil .containerAccueil .logo_big img {
-  width: 550px;
-  height: auto;
-}
-.accueil .containerAccueil .title {
-  font-weight: 400;
+.containerJoueurs .col1 .listJoueurs .titleContent {
+  padding: 30px;
   margin: 0;
-  text-transform: uppercase;
-  color: white;
-  display: inline;
+  padding-left: 42px;
+  margin-bottom: 30px;
+  display: block;
 }
-.accueil .containerAccueil .title--big {
+.containerJoueurs .col1 .listJoueurs .titleContent::before {
+  height: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .oneJoueur {
+  width: 33%;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-family: "Alegreya Sans", sans-serif;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 0px 2px 0px black;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .oneJoueur .initiales {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 300px;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #1a2c4d;
+  margin-bottom: 15px;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .oneJoueur .joueur-delete form input {
+  padding: 7px 10px;
+  background-color: #f2ce4f;
+  background-size: contain;
+  color: #1a2c4d;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: inline-flex;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  transition: all 0.5s;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .oneJoueur .joueur-delete form input:focus {
+  outline: none;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .oneJoueur .joueur-delete form input:hover {
+  background-color: #1a2c4d;
+  color: #f2ce4f;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .propriete {
+  margin-bottom: 15px;
+  align-items: center;
+  display: flex;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .propriete .nomPrenom {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.containerJoueurs .col1 .listJoueurs .joueurCard .propriete p {
+  color: white;
+  margin: 0 5px;
+}
+
+.containerEvents {
+  width: 100%;
+  display: flex;
+  padding-bottom: 50px;
+}
+.containerEvents .col1 {
+  width: 65%;
+  padding-right: 30px;
+}
+.containerEvents .col1 .listEvent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerEvents .col1 .listEvent .titleContent {
+  padding: 30px;
+  margin: 0;
+  padding-left: 42px;
+  margin-bottom: 30px;
+}
+.containerEvents .col1 .listEvent .titleContent::before {
+  height: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+}
+.containerEvents .col1 .listEvent .overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: #5a5656;
+  /* Black fallback color */
+  background-color: rgba(117, 110, 110, 0.5);
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+.containerEvents .col1 .listEvent .oneEvent {
+  width: 100%;
+  padding: 15px 15px 15px 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-family: "Alegreya Sans", sans-serif;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.containerEvents .col1 .listEvent .oneEvent:last-child {
+  margin-bottom: 0;
+}
+.containerEvents .col1 .listEvent .oneEvent div p {
+  color: white;
+  margin: 0 5px;
+}
+.containerEvents .col1 .listEvent .oneEvent .date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.containerEvents .col1 .listEvent .oneEvent .date .jour {
   font-size: 40px;
 }
-.accueil .containerAccueil .title--little {
-  font-size: 22px;
-  margin: 15px 0 25px 0;
-}
-.accueil .containerAccueil .title .point {
-  margin: 5px;
-}
-
-.containerContent {
-  width: 100%;
-  background-color: #1a2c4d;
-  padding-top: 170px;
-  position: relative;
-}
-.containerContent .lineOpacity {
-  width: 100%;
-  height: 38%;
-  position: absolute;
-  top: 43%;
-  left: 0;
-  background-color: #2e3f5d;
-}
-.containerContent .containerWidth {
-  width: 70%;
-  margin: auto;
+.containerEvents .col1 .listEvent .oneEvent .eventCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  margin-left: 30px;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form {
+  width: 150px;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form .present {
+  background-color: #07B38B;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form .absent {
+  background-color: #E3173F;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form .hidden {
+  display: none;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form input {
+  width: 100%;
+  padding: 7px 10px;
+  background-color: #f2ce4f;
+  background-size: contain;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  transition: all 0.5s;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form input:focus {
+  outline: none;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form input:hover {
+  background-color: #1a2c4d;
+  color: #f2ce4f;
+}
+.containerEvents .col1 .listEvent .oneEvent .btnEvent form input:last-child {
+  margin-top: 5px;
+}
+.containerEvents .col1 .listEvent .oneEvent .nomPrenom {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.containerEvents .col2 {
+  width: 35%;
+}
+.containerEvents .col2 img {
+  width: 100%;
+  height: auto;
+}
+.containerEvents .col2 form {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  border-left: 1px solid #f2ce4f;
+  border-top: 1px solid #f2ce4f;
+}
+.containerEvents .col2 form .titleContent {
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  padding-left: 12px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+.containerEvents .col2 form .titleContent::before {
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.containerEvents .col2 form label {
+  margin: 10px 0;
+}
+.containerEvents .col2 form input {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Alegreya Sans", sans-serif;
+  color: #1a2c4d;
+  padding: 5px 5px;
+  width: 100%;
+}
+.containerEvents .col2 form input:focus {
+  outline: none;
+}
+.containerEvents .col2 form button {
+  cursor: pointer;
+  margin: 15px 0 15px 1px;
+  border: none;
+  padding: 7px 10px;
+  background-color: #f2ce4f;
+  background-size: contain;
+  color: #1a2c4d;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  z-index: 0;
+}
+.containerEvents .col2 form button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1a2c4d;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.containerEvents .col2 form button:hover {
+  z-index: 0;
+  color: #f2ce4f;
+}
+.containerEvents .col2 form button:hover::before {
+  width: 100%;
+}
+.containerEvents .col2 form button:focus {
+  outline: none;
+}
+.containerEvents .col2 #ajoutEvent {
+  cursor: pointer;
+  padding: 15px;
+  color: transparent;
+  font-size: 20px;
+  border-top: 1px solid #f2ce4f;
+  border-left: 1px solid #f2ce4f;
+  text-align: center;
+  position: relative;
+}
+.containerEvents .col2 #ajoutEvent::before {
+  content: "Ajouter un évènement";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerEvents .col2 #ajoutEvent:hover::before {
+  top: 0;
+  left: 0;
 }
 
-.titleContent {
+.classPresent {
+  background-color: #07B38B;
+}
+
+.containerInfos {
+  width: 100%;
+  display: flex;
+  padding-bottom: 50px;
+}
+.containerInfos .col1 {
+  width: 65%;
+  padding-right: 30px;
+}
+.containerInfos .col1 .listInfos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerInfos .col1 .listInfos .joueurCard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+.containerInfos .col1 .listInfos .joueurCard .oneJoueur {
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-family: "Alegreya Sans", sans-serif;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 1px 0px 2px 0px black;
+}
+.containerInfos .col1 .listInfos .joueurCard .oneJoueur:last-child {
+  margin-bottom: 0;
+}
+.containerInfos .col1 .listInfos .joueurCard .oneJoueur .initiales {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 300px;
+  height: 200px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #1a2c4d;
+}
+.containerInfos .col1 .listInfos .joueurCard .oneJoueur .propriete {
+  margin-bottom: 15px;
+  align-items: center;
+  display: flex;
+}
+.containerInfos .col1 .listInfos .joueurCard .oneJoueur .propriete:last-child {
+  margin-bottom: 0;
+}
+.containerInfos .col1 .listInfos .joueurCard .oneJoueur .propriete .nomPrenom {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.containerInfos .col1 .listInfos .joueurCard .oneJoueur .propriete p {
+  color: white;
+  margin: 0 5px;
+  font-size: 20px;
+}
+.containerInfos .col2 {
+  width: 35%;
+}
+.containerInfos .col2 img {
+  width: 100%;
+  height: auto;
+}
+.containerInfos .col2 #formUpdate {
+  display: flex;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  border-left: 1px solid #f2ce4f;
+  border-top: 1px solid #f2ce4f;
+}
+.containerInfos .col2 #formUpdate .titleContentUpdate {
+  cursor: pointer;
   color: white;
   display: inline-flex;
   text-transform: uppercase;
   font-size: 25px;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 30px 30px 30px 42px;
-  margin: 0px auto 50px auto;
+  padding-left: 12px;
+  margin-bottom: 15px;
 }
-.titleContent::before {
+.containerInfos .col2 #formUpdate .titleContentUpdate::before {
   content: "";
-  height: 24px;
+  height: 100%;
   width: 2px;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  background-color: #f2ce4f;
-}
-
-.club {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-bottom: 50px;
-  position: relative;
-}
-.club .victory {
-  position: absolute;
-  top: 15%;
-  left: -3%;
-  width: 60%;
-  height: auto;
-  z-index: 1;
-}
-.club .clubContent {
-  position: relative;
-  background-color: #384765;
-  font-family: "Alegreya Sans", sans-serif;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 45%;
-  padding: 35px;
-}
-.club .clubContent h2 {
-  background-color: transparent;
-  margin: 0;
-  padding-left: 10px;
-  padding-top: 0;
-  position: relative;
-}
-.club .clubContent h2::before {
   position: absolute;
   top: 0;
   left: 0;
+  background-color: #f2ce4f;
 }
-.club .clubContent p {
-  margin-bottom: 10px;
+.containerInfos .col2 #formUpdate label {
+  margin: 10px 0;
 }
-.club .clubContent .lastP {
-  margin-bottom: 20px;
+.containerInfos .col2 #formUpdate input {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Alegreya Sans", sans-serif;
+  color: #1a2c4d;
+  padding: 5px 5px;
+  width: 100%;
+}
+.containerInfos .col2 #formUpdate input:focus {
+  outline: none;
+}
+.containerInfos .col2 #formUpdate select {
+  width: 100%;
+  padding: 10px 5px;
+}
+.containerInfos .col2 #formUpdate button {
+  cursor: pointer;
+  margin: 15px 0 15px 1px;
+  border: none;
+  padding: 7px 10px;
+  background-color: #f2ce4f;
+  background-size: contain;
+  color: #1a2c4d;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  z-index: 0;
+}
+.containerInfos .col2 #formUpdate button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1a2c4d;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.containerInfos .col2 #formUpdate button:hover {
+  z-index: 0;
+  color: #f2ce4f;
+}
+.containerInfos .col2 #formUpdate button:hover::before {
+  width: 100%;
+}
+.containerInfos .col2 #formUpdate button:focus {
+  outline: none;
+}
+.containerInfos .col2 #updateInfos {
+  cursor: pointer;
+  padding: 15px;
+  color: transparent;
+  font-size: 20px;
+  border-top: 1px solid #f2ce4f;
+  border-left: 1px solid #f2ce4f;
+  text-align: center;
+  position: relative;
+}
+.containerInfos .col2 #updateInfos::before {
+  content: "Modifier mes infos";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerInfos .col2 #updateInfos:hover::before {
+  top: 0;
+  left: 0;
 }
 
 .p-i-flex {
@@ -571,6 +981,43 @@ header .connexion a {
   padding: 30px;
 }
 
+.lineOpacity {
+  width: 100%;
+  height: 38%;
+  position: absolute;
+  top: 43%;
+  left: 0;
+  background-color: #2e3f5d;
+}
+
+.connexionForm {
+  width: 60%;
+}
+.connexionForm form {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.connexionForm form h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.connexionForm form #connecteToi {
+  cursor: pointer;
+}
+.connexionForm form #inscrisToi {
+  cursor: pointer;
+}
+.connexionForm form .msgErreur {
+  margin-bottom: 10px;
+  color: white;
+  text-transform: uppercase;
+  border-bottom: 2px solid #D91136;
+}
+.connexionForm form p span a {
+  text-decoration: none;
+  color: white;
+}
+
 .imgContact {
   width: 40%;
   height: auto;
@@ -584,7 +1031,7 @@ header .connexion a {
   justify-content: flex-start;
 }
 .flexContact form {
-  width: 40%;
+  flex-grow: 1;
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
   display: flex;
@@ -691,64 +1138,171 @@ header .connexion a {
   outline: none;
 }
 
-.connexionForm {
-  flex-grow: 1;
-  width: 40%;
+.club {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 50px;
+  position: relative;
 }
-.connexionForm form {
+.club .victory {
+  position: absolute;
+  top: 15%;
+  left: -3%;
   width: 60%;
-  margin-bottom: 15px;
+  height: auto;
+  z-index: 1;
 }
-.connexionForm form h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-.connexionForm form #connecteToi {
-  cursor: pointer;
-}
-.connexionForm form #inscrisToi {
-  cursor: pointer;
-}
-.connexionForm form p span a {
-  text-decoration: none;
+.club .clubContent {
+  position: relative;
+  background-color: #384765;
+  font-family: "Alegreya Sans", sans-serif;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 45%;
+  padding: 35px;
+}
+.club .clubContent h2 {
+  font-family: "Oswald", sans-serif;
+  background-color: transparent;
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 0;
+  position: relative;
+}
+.club .clubContent h2::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.club .clubContent p {
+  margin-bottom: 10px;
+}
+.club .clubContent .lastP {
+  margin-bottom: 20px;
 }
 
-.containerCoach {
-  width: 100%;
-  display: flex;
+.comptebloque {
   padding-bottom: 50px;
+  text-align: center;
 }
-.containerCoach .col1 {
-  width: 60%;
+.comptebloque h3 {
+  font-size: 25px;
+  color: white;
+  padding: 15px;
 }
-.containerCoach .col2 {
-  flex-grow: 1;
+.comptebloque h4 {
+  color: white;
+  font-size: 20px;
+}
+.comptebloque p {
+  color: white;
+  padding-top: 15px;
+}
+.comptebloque p a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+.comptebloque p a::before {
+  transition: all 0.5s;
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f2ce4f;
+  width: 0;
+  height: 1px;
+}
+.comptebloque p a:hover {
+  color: #f2ce4f;
+}
+.comptebloque p a:hover::before {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.accueil {
+  background-image: url("../img/accueil.jpg");
+  background-size: cover;
+  overflow: hidden;
+  width: auto;
+  height: 100%;
+}
+.accueil .containerAccueil {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
-.containerCoach .col2 .btnAction {
-  margin-top: 15px;
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 100%;
+.accueil .containerAccueil .logo_big {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.containerCoach .col2 .btnAction .titleContent {
-  background-color: transparent;
+.accueil .containerAccueil .logo_big img {
+  width: 550px;
+  height: auto;
+}
+.accueil .containerAccueil .title {
+  font-weight: 400;
   margin: 0;
-  cursor: pointer;
-  width: 100%;
-  font-size: 20px;
-}
-.containerCoach .col2 .btnAction .titleContent::before {
-  height: 20px;
-}
-.containerCoach .col2 .btnAction .titleContent a {
-  text-decoration: none;
+  text-transform: uppercase;
   color: white;
+  display: inline;
 }
-.containerCoach .col2 .btnAction #listeJoueurs {
-  display: none;
+.accueil .containerAccueil .title--big {
+  font-size: 40px;
+}
+.accueil .containerAccueil .title--little {
+  font-size: 22px;
+  margin: 15px 0 25px 0;
+}
+.accueil .containerAccueil .title .point {
+  margin: 5px;
+}
+
+.containerContent {
+  width: 100%;
+  background-color: #1a2c4d;
+  padding-top: 170px;
+  position: relative;
+}
+.containerContent .containerWidth {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleContent {
+  color: white;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: 25px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 30px 30px 30px 42px;
+  margin: 0px auto 50px auto;
+}
+.titleContent::before {
+  content: "";
+  height: 24px;
+  width: 2px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: #f2ce4f;
 }
 
 /*# sourceMappingURL=style.css.map */

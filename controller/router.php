@@ -3,43 +3,48 @@
     {
         switch ($_GET["section"]) {
             case 'accueil':
-                include("controller/accueilController.php");
+                require_once("controller/accueilController.php");
                 break;
             case 'lultimate':
-                include("controller/lultimateController.php");
+                require_once("controller/lultimateController.php");
                 break;
             case 'leclub':
-                include("controller/leclubController.php");
+                require_once("controller/leclubController.php");
                 break;
             case 'lesentrainements':
-                include("controller/lesentrainementsController.php");
+                require_once("controller/lesentrainementsController.php");
                 break;
             case 'contact':
-                include("controller/contactController.php");
-                break;
-            case 'connexion':
-                include("controller/connexionController.php");
-                break;
-            case 'deconnexion':
-                include("controller/deconnexionController.php");
-                break;
-            case 'compteCoach':
-                include("controller/compteCoachController.php");
-                break;
-            case 'compteJoueur':
-                include("controller/compteJoueurController.php");
+                require_once("controller/contactController.php");
                 break;
             case 'inscription':
-                include("controller/inscriptionController.php");
+                require_once("controller/inscriptionController.php");
                 break;
-            
+            case 'connexion':
+                require_once("controller/connexionController.php");
+                break;
+            case 'deconnexion':
+                require_once("controller/deconnexionController.php");
+                break;
+            case 'moncompte':
+                require_once("controller/moncompteController.php");
+                break;
+            case 'lesjoueurs':
+                require_once("controller/lesjoueursController.php");
+                break;
+            case 'lesevents':
+                require_once("controller/leseventsController.php");
+                break;
+            case 'comptebloque':
+                require_once("controller/comptebloqueController.php");
+                break;
             default:
-                include("view/error/404.php");
+                require_once("view/error/404.php");
                 break;
         }
     }
     else
     {
-        include("view/page/accueil.php");
+        require_once("view/page/accueil.php");
     }
 ?>

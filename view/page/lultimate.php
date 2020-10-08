@@ -1,4 +1,4 @@
-<?php include("view/menu/menu.php");  ?>
+<?php require_once("view/menu/menu.php");  ?>
 <div class="containerWidth">   
     <h2 class="titleContent">L'ultimate Frisbee</h2>
     <div class="p-i-flex">
@@ -31,6 +31,6 @@
                 </div>
                 </div>
             </div>
-<?php include("view/menu/menufooter.php");  ?>
-<script src="public/js/script.js"></script>
-<?php include("view/html/footer.php"); ?>
+<?php require_once("view/menu/menufooter.php");  ?>
+<script src="public/js/scriptLultimate.js"></script>
+<?php require_once("view/html/footer.php"); ?>

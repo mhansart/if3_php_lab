@@ -2,5 +2,5 @@
     // verifie
 
 
-    include("view/page/lultimate.php");
+    require_once("view/page/lultimate.php");
 ?>

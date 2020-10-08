@@ -2,5 +2,5 @@
     // verifie
 
 
-    include("view/page/leclub.php");
+    require_once("view/page/leclub.php");
 ?>

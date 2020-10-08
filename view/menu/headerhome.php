@@ -1,5 +1,5 @@
 <header class="headerHome">
     <div class="containerHeaderHome">
-            <?php include("view/menu/menuconnexion.php");  ?>
+            <?php require_once("view/menu/menuconnexion.php");  ?>
         </div>
 </header>

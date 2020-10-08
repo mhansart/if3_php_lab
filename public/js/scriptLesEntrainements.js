@@ -1,0 +1,1 @@
+lesentrainements.classList.add("active");

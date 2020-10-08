@@ -1,0 +1,35 @@
+@use '../variables' as *;
+
+.connexionForm{
+    width: 60%;
+    form{
+        width: 100%;
+        margin-bottom: 15px;
+        h3{
+            font-size: $font-size-p;
+            margin-bottom: 15px;
+        }
+        #connecteToi{
+            cursor: pointer;
+        }
+        #inscrisToi{
+            cursor: pointer;
+        }
+        .msgErreur{
+            margin-bottom: 10px;
+            color: $third-color; 
+            text-transform: uppercase;
+            border-bottom: 2px solid #D91136;   
+        }
+        p{
+            span{
+                a{
+                    text-decoration: none;
+                    color: $third-color;
+                }
+            }
+            
+        }
+        
+    }
+}

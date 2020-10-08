@@ -1,0 +1,1 @@
+lesjoueurs.classList.add("activecompte");

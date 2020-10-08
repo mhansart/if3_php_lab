@@ -1,4 +1,4 @@
-<?php include("view/menu/menu.php");  ?>
+<?php require_once("view/menu/menu.php");  ?>
 <div class="lineOpacity"></div>
 <div class="containerWidth">   
     <div class="club">
@@ -15,6 +15,6 @@
         </div>
     </div>
 
-<?php include("view/menu/menufooter.php");  ?>
-<script src="public/js/script.js"></script>
-<?php include("view/html/footer.php"); ?>
+<?php require_once("view/menu/menufooter.php");  ?>
+<script src="public/js/scriptLeClub.js"></script>
+<?php require_once("view/html/footer.php"); ?>

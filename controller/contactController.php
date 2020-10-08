@@ -17,5 +17,5 @@
         $etat='Erreur, réessayez';
       }
     }  
-    include("view/page/contact.php");
+    require_once("view/page/contact.php");
 ?>

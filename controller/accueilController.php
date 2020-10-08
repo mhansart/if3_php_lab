@@ -2,5 +2,5 @@
     // verifie
 
 
-    include("view/page/accueil.php");
+    require_once("view/page/accueil.php");
 ?>

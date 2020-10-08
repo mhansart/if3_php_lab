@@ -1,0 +1,1 @@
+leclub.classList.add("active");

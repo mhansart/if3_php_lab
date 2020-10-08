@@ -1,0 +1,191 @@
+@use '../variables' as *;
+
+.containerInfos{
+    width: 100%;
+    display: flex;
+    padding-bottom: 50px;
+    .col1{
+        width: 65%;
+        padding-right: 30px;
+        .listInfos{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .joueurCard{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-around;
+                .oneJoueur{
+                    width: 100%;
+                    padding: 30px;
+                    background-color: $tc-opacity;
+                    font-family: $font-content;
+                    margin-bottom: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    box-shadow: 1px 0px 2px 0px rgb(0,0,0);
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                    .initiales{
+                        font-size: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 300px;
+                        height: 200px;
+                        width: 200px;
+                        background-color: $tc-opacity;
+                        color: $second-color;      
+                    }
+                    .propriete{
+                        margin-bottom: 15px;
+                        align-items: center;
+                        display: flex;
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        .nomPrenom{
+                            font-size: $font-size-btitle;
+                            margin-bottom: 5px;
+                        }
+                        p{
+                            color: $third-color;
+                            margin: 0 5px;
+                            font-size: $font-size-menu;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .col2{
+        width: 35%;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        #formUpdate{
+            display: flex;
+            width: 100%;
+            background-color: $tc-opacity;
+            color: $third-color;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px;
+            border-left: 1px solid $first-color;
+            border-top: 1px solid $first-color;
+            .titleContentUpdate{
+                cursor: pointer;
+                color: $third-color;
+                display: inline-flex;
+                text-transform: uppercase;
+                font-size: $font-size-btitle;
+                position: relative;
+                padding-left:12px;
+                margin-bottom: 15px;
+                &::before{
+                    content: "";
+                    height: 100%;
+                    width: 2px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: $first-color;
+                }
+            }
+            label{
+                margin: 10px 0;
+            }
+            input{
+                font-size: $font-size-p;
+                font-weight: $font-weight-title;
+                font-family: $font-content;
+                color: $second-color;
+                padding: 5px 5px;
+                width: 100%;
+                &:focus{
+                    outline: none;
+                }
+            }
+            select{
+                width: 100%;
+                padding: 10px 5px;
+            }
+            button{
+                cursor: pointer;
+                margin: 15px 0 15px 1px;
+                border: none;
+                padding: 7px 10px;
+                background-color: $first-color;
+                background-size: contain;
+                color: $second-color;
+                font-size: 15px;
+                text-transform: uppercase;
+                text-decoration: none;
+                display: inline-flex;
+                position: relative;
+                font-family: $main-font;
+                font-size: $font-size-menu;
+                z-index: 0;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: $second-color;
+                    transition: all 0.3s;
+                    z-index: -1;
+    
+                }
+                &:hover{
+                    z-index: 0;
+                    color: $first-color;
+                    &::before{
+                        width: 100%;
+                    }
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+
+        #updateInfos{
+            cursor: pointer;
+            padding: 15px;
+            color: transparent;
+            font-size: $font-size-menu;
+            border-top:1px solid $first-color;
+            border-left:1px solid $first-color;
+            text-align: center;
+            position: relative;
+            &::before{
+                content: 'Modifier mes infos';
+                width: 100%;
+                height: 100%;
+                background-color: $tc-opacity;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                color: $third-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &:hover{
+                &::before{
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }    
+}
+

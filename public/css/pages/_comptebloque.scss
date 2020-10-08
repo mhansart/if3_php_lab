@@ -1,0 +1,41 @@
+@use '../variables' as *;
+
+.comptebloque{
+    padding-bottom: 50px;
+    text-align: center;
+    h3{
+        font-size: $font-size-btitle;
+        color: $third-color;
+        padding: 15px;
+    }
+    h4{
+        color: $third-color;
+        font-size: $font-size-menu;
+    }
+    p{
+        color: $third-color;
+        padding-top: 15px;
+        a{
+            text-decoration: none;
+            color: $third-color;
+            position: relative;
+            &::before{
+                transition: all 0.5s;
+                content:"";
+                position: absolute;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $first-color;
+                width: 0;
+                height: 1px;
+            }
+            &:hover{
+                color: $first-color;
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

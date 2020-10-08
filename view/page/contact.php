@@ -1,4 +1,4 @@
-<?php include("view/menu/menu.php"); ?>
+<?php require_once("view/menu/menu.php"); ?>
 <div class="containerWidth">
     <div class="p-i-flex flexContact">
         <div class="imgContact"><img src="public/img/contact.jpg" alt="contact"></div>
@@ -18,7 +18,7 @@
     </form>
     </div>
 </div>
-<?php include("view/menu/menufooter.php");  ?>
-<script src="public/js/script.js"></script>
-<?php include("view/html/footer.php"); ?>
+<?php require_once("view/menu/menufooter.php");  ?>
+<script src="public/js/scriptContact.js"></script>
+<?php require_once("view/html/footer.php"); ?>
 
