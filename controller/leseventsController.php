@@ -1,8 +1,9 @@
 <?php 
     try{    // connexion avec la base de données avec PDO 
         
+
         $coach_joueur="" ;
-            if($_SESSION['role']=='coach'){
+            if($_SESSION['role']=='Coach'){
             $coach_joueur= '<div>
                     <h2 id="ajoutEvent">Ajouter un évènement</h2>
                     <form method="post" id="formEvents" style="display:none">
@@ -36,10 +37,15 @@
         CONCAT(DATE_FORMAT(entrainement_heure_debut, '%k'),'h',DATE_FORMAT(entrainement_heure_debut,'%i')) as 'debut',
         CONCAT(DATE_FORMAT(entrainement_heure_fin, '%k'),'h',DATE_FORMAT(entrainement_heure_fin,'%i')) as 'fin',entrainement_type,
         entrainement_date FROM entrainements ORDER BY entrainement_date" ;    // affichage des données avec une nouvelle boucle « foreach »    
+        $requete2 = "SELECT joueur_nom, joueur_prenom, entrainement_id FROM joueurs JOIN joueurs_entrainements ON joueurs.joueur_id = joueurs_entrainements.joueur_id";
+        $objJoueurs=$pdo->query($requete2);
+        $tabJoueurs = $objJoueurs->fetchAll();
+        // var_dump($tabJoueurs);
+        // die;
         $events = $pdo->query($requete);
         foreach($events as $event){
             $listeEvents.=
-            "<div class='oneEvent'>
+            "<div class='oneEvent' >
                 <div class='date'><p class='bold jour'>".$event['jour']."</p><p class='mois'>".$event['mois']."</p></div>
                 <div class='eventCard'>
                     <p class='bold nomPrenom'>".$event['entrainement_type']." du ".$event['format_date']."</p>
@@ -48,25 +54,45 @@
                 </div>
                 <div class='btnEvent'>
                     <form action='#' method='post'>
-                    <input type='hidden' name='name' value='". $event['entrainement_id']."'>
-                    <input type='submit' name='submit' class='present' value='Présent'></form>
-                    <form action='#' method='post'>
-                    <input type='hidden' name='absent' value='". $event['entrainement_id']."'>
-                    <input type='submit' name='submit' class='absent' value='Absent'></form>
+                    <input type='hidden' name='id' value='". $event['entrainement_id']."'>
+                    <input type='submit' name='present' class='present' value='Présent'>
+                    <input type='submit' name='absent' class='absent' value='Absent'></form>
                 </div>
+                <div><details><summary>Présents</summary><div>";
+                foreach($tabJoueurs as $joueur){
+                    if($event['entrainement_id'] == $joueur['entrainement_id']){
+                        $listeEvents.="<p>".$joueur['joueur_nom']." ".$joueur['joueur_prenom']."</p>";
+                    }
+                }
+
+                
+                $listeEvents.="</div></details></div>
             </div>";  
         };  
-        if(isset($_POST['name']))       
+        if(isset($_POST['present']))       
          {
          $requeteJoueurId="SELECT joueur_id FROM joueurs WHERE joueur_nom = '{$_SESSION['nom']}' AND joueur_prenom ='{$_SESSION['prenom']}'";
          $objetjoueur = $pdo->query($requeteJoueurId);
          $objetjoueurId = $objetjoueur->fetch();
-         $rqt="INSERT INTO `joueurs_entrainements` (joueur_id,entrainement_id)VALUES(:joueur_id, :entrainement_id)";
+         $rqt="INSERT INTO `joueurs_entrainements` (joueur_id,entrainement_id, presence)VALUES(:joueur_id, :entrainement_id, :presence)";
          $objet = $pdo->prepare($rqt);        
          $objet->execute(array(            
             ":joueur_id" => $objetjoueurId[0],
-            ":entrainement_id"=>trim($_POST['name'])          
+            ":entrainement_id"=>trim($_POST['id']),
+            ":presence"=>true          
         ));        
+        }elseif(isset($_POST['absent'])){
+            $requeteJoueurId="SELECT joueur_id FROM joueurs WHERE joueur_nom = '{$_SESSION['nom']}' AND joueur_prenom ='{$_SESSION['prenom']}'";
+         $objetjoueur = $pdo->query($requeteJoueurId);
+         $objetjoueurId = $objetjoueur->fetch();
+         $rqt="INSERT INTO `joueurs_entrainements` (joueur_id,entrainement_id, presence)VALUES(:joueur_id, :entrainement_id, :presence)";
+         $objet = $pdo->prepare($rqt);        
+         $objet->execute(array(            
+            ":joueur_id" => $objetjoueurId[0],
+            ":entrainement_id"=>trim($_POST['id']),
+            ":presence"=>false         
+        ));        
+
         }   
         if(isset($_POST["typeEvent"],$_POST["date"],$_POST["adresse"],$_POST["heureStart"],$_POST["heureStop"]))
         {      
